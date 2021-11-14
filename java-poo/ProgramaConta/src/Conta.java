@@ -1,7 +1,27 @@
 class Conta {
+    boolean estadoConta;
     String titularConta;
     int numConta;
     double saldoConta;
+
+    //Criar construtor sem parâmetro
+    Conta() {
+        estadoConta = true;
+    }
+
+    //Criar construtor com parâmetro
+    Conta(String nomeConta, int n_Conta) {
+        estadoConta = true;
+        titularConta = nomeConta;
+        numConta = n_Conta;
+    }
+
+    Conta(String nomeConta, int n_Conta, double valorConta) {
+        estadoConta = true;
+        titularConta = nomeConta;
+        numConta = n_Conta;
+        saldoConta = valorConta;
+    }
 
     void depositar(double valorDepositar){
         saldoConta += valorDepositar;
@@ -25,6 +45,7 @@ class Conta {
     void impimirDados(){
         System.out.println();
         System.out.println("DADOS DA CONTA");
+        System.out.println("Estado da conta: " + estadoConta);
         System.out.println("Nome do titular da conta: " + titularConta);
         System.out.println("Número da conta: " + numConta);
         System.out.println("Saldo da conta: " + saldoConta);
